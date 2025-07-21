@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Roadtrip Unlock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="NFC unlock – roadtrip kit + memes." />
+  <style>
+    :root {
+      --bg-dark: #0f0f10;
+      --bg-panel: #1b1b1d;
+      --bg-panel-hover: #252527;
+      --text-main: #e5e5e5;
+      --text-sub: #a0a0a0;
+      --accent: #ff2b2b;
+      --accent-focus: #ff5555;
+      --radius: 10px;
+      --gap: 1.25rem;
+      --font-main: "Segoe UI", Roboto, sans-serif;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.4;
+    }
+    .wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin: 0 0 0.75rem;
+      font-weight: 600;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin: 2.5rem 0 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    p {
+      margin: 0 0 1.25rem;
+      color: var(--text-sub);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: var(--gap);
+      margin-top: 1.25rem;
+    }
+    a.tile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      background: var(--bg-panel);
+      border: 1px solid #2d2d2f;
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text-main);
+      transition: all .15s ease;
+      font-size: 0.95rem;
+    }
+    a.tile:focus,
+    a.tile:hover {
+      background: var(--bg-panel-hover);
+      border-color: var(--accent);
+      color: var(--accent-focus);
+      transform: translateY(-2px);
+    }
+    .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .small {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      margin-top: 2.5rem;
+    }
+    button.play {
+      margin: 1.25rem auto 0;
+      padding: 0.6rem 1.25rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--accent);
+      color: #fff;
+      cursor: pointer;
+      transition: background .15s ease;
+    }
+    button.play:hover,
+    button.play:focus {
+      background: var(--accent-focus);
+    }
+    .img-meme {
+      max-width: 180px;
+      margin: 1.5rem auto;
+      border-radius: var(--radius);
+      opacity: 0.95;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Unlocked!</h1>
+    <p>Congratulations – you solved the box. You’ve unlocked the most powerful feature of all: freedom from productivity.</p>
+
+    <img class="img-meme" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Bradypus.jpg/320px-Bradypus.jpg" alt="Sloth approves" />
+
+    <button class="play" id="playBtn" aria-label="Play celebratory anthem">Play Všeckiego Najlepšego</button>
+    <audio id="anthem" src="https://youtu.be/3cnSbVjojzM?si=GtmvdNK__UotCnur"></audio>
+    <p>
+      <a class="tile" style="display:inline-flex;padding:0.5rem 1rem;" href="https://youtu.be/3cnSbVjojzM?si=GtmvdNK__UotCnur" target="_blank" rel="noopener">Open on YouTube</a>
+    </p>
+
+    <h2>Ride Ready</h2>
+    <div class="grid">
+      <a class="tile" href="https://www.shmu.sk/sk/?page=1&id=meteo_radar" target="_blank" rel="noopener">
+        <span class="icon">🌧️</span>SHMÚ Radar
+      </a>
+      <a class="tile" href="https://mapy.cz" target="_blank" rel="noopener">
+        <span class="icon">🗺️</span>Mapy.cz
+      </a>
+      <a class="tile" href="https://www.windy.com/?50.000,15.000,5" target="_blank" rel="noopener">
+        <span class="icon">🌬️</span>Windy
+      </a>
+    </div>
+
+    <h2>Brain Reset</h2>
+    <div class="grid">
+      <a class="tile" href="https://www.quordle.com" target="_blank" rel="noopener">
+        <span class="icon">🧠</span>Quordle
+      </a>
+      <a class="tile" href="https://www.formula1.com/en/racing.html" target="_blank" rel="noopener">
+        <span class="icon">🏁</span>F1 Schedule
+      </a>
+      <a class="tile" href="https://www.youtube.com/results?search_query=grand+tour+funniest+moments" target="_blank" rel="noopener">
+        <span class="icon">😂</span>Grand Tour Clips
+      </a>
+    </div>
+
+    <p class="small">You can reflash the NFC any time. Because commitment is overrated.</p>
+  </div>
+
+  <script>
+    document.getElementById('playBtn').addEventListener('click', function(){
+      window.open('https://youtu.be/3cnSbVjojzM?si=GtmvdNK__UotCnur','_blank');
+    });
+  </script>
+</body>
+</html>
